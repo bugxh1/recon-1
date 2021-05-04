@@ -29,6 +29,12 @@ sudo apt-get install -y rename
 sudo apt-get install -y xargs
 sudo apt-get install -y snapd
 sudo apt-get install gem -y
+apt-get install -yq --no-install-recommends \
+     libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 \
+     libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 \
+     libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 \
+     libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 libnss3
+apt-get install -yq --no-install-recommends libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 libnss3
 sudo gem install wpscan
 gem install wpscan
 pip3 install dnsgen
@@ -93,6 +99,11 @@ echo "Done"
 #install assetfinder
 echo "Installing Assetfinder"
 go get -u github.com/tomnomnom/assetfinder 
+echo "done"
+
+#install qsreplace
+echo "Installing qsreplace"
+go get -u github.com/tomnomnom/qsreplace 
 echo "done"
 
 #install gau
@@ -218,6 +229,10 @@ echo "Installing httpx"
 GO111MODULE=on go get -v github.com/projectdiscovery/httpx/cmd/httpx
 echo "done"
 
+echo "Installing chaos"
+GO111MODULE=on go get -v github.com/projectdiscovery/chaos-client/cmd/chaos
+echo "done"
+
 echo "installing dirsearch"
 git clone https://github.com/maurosoria/dirsearch.git
 cd ~/tools/
@@ -307,6 +322,10 @@ echo "Installing GoAltdns"
 go get github.com/subfinder/goaltdns
 echo "Done"
 
+echo "Installing crlfuzz"
+go get github.com/dwisiswant0/crlfuzz/cmd/crlfuzz
+echo "Done"
+
 echo "installing sqlmap"
 sudo apt install sqlmap -y
 echo "done"
@@ -330,6 +349,7 @@ echo "installing massdns"
 git clone https://github.com/blechschmidt/massdns.git
 cd ~/tools/massdns
 make
+cp /root/tools/massdns/bin/massdns /usr/local/bin/massdns
 cd ~/tools/
 echo "done"
 
